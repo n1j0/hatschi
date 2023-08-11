@@ -1,0 +1,29 @@
+<ion-content>
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size="5" size-xl="4">
+                <h3 class="ion-padding-horizontal">HatschiID: {{ myHatschiID }}</h3>
+                <app-new-chat-input class="ion-margin-bottom"></app-new-chat-input>
+                <ion-list>
+                    <ion-list-header lines="none">
+                        <ion-label>Chats</ion-label>
+                    </ion-list-header>
+                    <app-chat-list></app-chat-list>
+                </ion-list>
+            </ion-col>
+            <ion-col size="7" size-xl="8">
+                <div *ngIf="chatService.chat.theirHatschiID else showSelectChatInfo" class="chat ion-padding-horizontal">
+                    <app-chat-messages [theirHatschiID]="chatService.chat.theirHatschiID"></app-chat-messages>
+                    <div class="message-bar">
+                        <app-message-input (newMessage)="sendMessage($event)"></app-message-input>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+<ng-template #showSelectChatInfo>
+    <h2 class="ion-padding-horizontal">Please select a chat or start a new one</h2>
+</ng-template>
+

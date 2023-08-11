@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "stylelint-config-hudochenkov/order",
+    "stylelint-config-standard",
+    "stylelint-config-sass-guidelines"
+  ],
+  "rules": {
+    "at-rule-empty-line-before": null,
+    "block-closing-brace-newline-after": null,
+    "indentation": 4,
+    "function-parentheses-space-inside": null,
+    "order/properties-alphabetical-order": null,
+    "max-nesting-depth": 3,
+    "selector-max-compound-selectors": 3,
+    "selector-no-qualifying-type": null,
+    "no-descending-specificity": null,
+    "no-empty-source": null,
+    "color-hex-length": "long",
+    "selector-type-no-unknown": null
+  }
+}

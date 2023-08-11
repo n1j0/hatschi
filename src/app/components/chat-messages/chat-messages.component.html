@@ -1,0 +1,5 @@
+<div *ngFor="let message of messages" class="message" [ngClass]="{ 'right': message.sender === myHatschiID }">
+  <ion-item color="{{ message.sender === myHatschiID ? 'primary' : 'secondary' }}" lines="none">
+    <p>{{ message.text }}</p>
+  </ion-item>
+</div>

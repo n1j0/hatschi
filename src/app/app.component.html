@@ -1,0 +1,60 @@
+<ion-app>
+    <ion-router-outlet *ngIf="isApp()"></ion-router-outlet>
+    <ion-grid *ngIf="!isApp()">
+        <div *ngIf="isScreenLarge$ | async else mobileHint">
+            <div *ngIf="browserIsReady else browserSetup">
+                <ion-router-outlet></ion-router-outlet>
+            </div>
+            <iframe width="0" height="0" class="ion-hide" id="storageContainer"
+                    src="../isolated-storage/isolated-storage.html"></iframe>
+        </div>
+    </ion-grid>
+</ion-app>
+
+<ng-template #browserSetup>
+    <div *ngIf="secureHatschiObject === null else input">
+        <ion-spinner *ngIf="!sessionID"></ion-spinner>
+        <qrcode
+                *ngIf="sessionID"
+                [colorDark]="'#e07454'"
+                [qrdata]="sessionID"
+                [width]="256"
+                [errorCorrectionLevel]="'L'"
+                [margin]="1"
+        >
+        </qrcode>
+    </div>
+</ng-template>
+
+<ng-template #input>
+    <ion-item class="ion-margin-bottom">
+        <ion-input [(ngModel)]="passphrase" inputmode="text" placeholder="Password"></ion-input>
+        <ion-button slot="end" (click)="decryptIdentity()" [disabled]="passphrase.trim().length < 6">
+            <ion-icon name="lock-open-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+    </ion-item>
+    <ion-text *ngIf="invalidPassword" color="danger" class="ion-padding-horizontal">
+        <span>Invalid password. Please try again</span>
+    </ion-text>
+</ng-template>
+
+<ng-template #mobileHint>
+    <ion-grid class="mobile-hint">
+        <ion-text color="primary">
+            <h1>Please use a desktop PC or our app</h1>
+        </ion-text>
+        <h2>Our app is available on</h2>
+        <ion-row class="ion-align-items-center">
+            <ion-icon name="logo-google-playstore" class="ion-margin-end" color="primary" size="large"></ion-icon>
+            <p>Play Store</p>
+        </ion-row>
+        <ion-row class="ion-align-items-center">
+            <ion-icon name="logo-apple-appstore" class="ion-margin-end" color="primary" size="large"></ion-icon>
+            <p>App Store</p>
+        </ion-row>
+        <ion-row class="ion-align-items-center">
+            <ion-icon name="logo-windows" class="ion-margin-end" color="primary" size="large"></ion-icon>
+            <p>Windows Store</p>
+        </ion-row>
+    </ion-grid>
+</ng-template>

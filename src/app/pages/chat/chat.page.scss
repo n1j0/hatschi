@@ -1,0 +1,11 @@
+.chat-bar {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    width: 100%;
+}
+
+ion-toolbar.chat-toolbar {
+    --ion-toolbar-background: var(--ion-background-color);
+}

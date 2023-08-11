@@ -1,0 +1,4 @@
+<ion-item>
+    <ion-input [(ngModel)]="theirHatschiID" inputmode="text" placeholder="HatschiID"></ion-input>
+    <ion-button slot="end" (click)="openChat()" [disabled]="theirHatschiID.trim().length !== 8">Start chat</ion-button>
+</ion-item>

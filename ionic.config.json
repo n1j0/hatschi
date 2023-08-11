@@ -1,0 +1,8 @@
+{
+  "name": "hatschi",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "telemetry": false
+}

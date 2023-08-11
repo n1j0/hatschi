@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            {{ chat.chat.myHatschiID || '' }}
+        </ion-title>
+        <ion-buttons slot="primary">
+            <ion-button routerLink="/qrscanner">
+                <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-list lines="full">
+        <app-chat-list *ngIf="chat.chat.myHatschiID"></app-chat-list>
+    </ion-list>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="openNewChatModal()" size="small">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>
+

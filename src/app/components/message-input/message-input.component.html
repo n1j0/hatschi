@@ -1,0 +1,4 @@
+<ion-input [(ngModel)]="messageText" inputmode="text" [maxlength]="1000" placeholder="Your secure message..."></ion-input>
+<ion-button (click)="sendMessage()" [disabled]="!messageText.trim()" shape="round" size="small">
+    <ion-icon name="paper-plane" slot="icon-only"></ion-icon>
+</ion-button>

@@ -1,0 +1,46 @@
+{
+  "rules": {
+    "messages": {
+      "$chatid": {
+        ".write": "auth !== null && $chatid.contains(root.child('uuids').child(auth.uid).val())",
+        ".read": "auth !== null && $chatid.contains(root.child('uuids').child(auth.uid).val())"
+      }
+    },
+    "hatschiIDs": {
+      ".read": "auth !== null",
+      ".write": false
+    },
+    "uuids": {
+      "$id": {
+        ".write": false,
+        ".read": "auth !== null && auth.uid === $id"
+      }
+    },
+    "users": {
+      ".write": false,
+      ".read": false,
+      "$uid": {
+        "chats": {
+          ".write": "auth !== null",
+          ".read": "auth !== null && auth.uid === root.child('users').child($uid).child('uuid').val()"
+        },
+        "uuid": {
+          ".read": false,
+          ".write": false
+        },
+        "publicKey": {
+          ".read": "auth !== null",
+          ".write": false
+        },
+        "fcmTokens": {
+          ".read": false,
+          ".write": "auth !== null && auth.uid === root.child('users').child($uid).child('uuid').val()"
+        }
+      }
+    },
+    "sessions": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}

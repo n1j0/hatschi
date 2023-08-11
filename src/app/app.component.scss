@@ -1,0 +1,8 @@
+.mobile-hint ion-row {
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}

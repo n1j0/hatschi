@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{ theirName }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+    <app-chat-messages [theirHatschiID]="chatService.chat.theirHatschiID" (startScroll)="scrollToBottom()"></app-chat-messages>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-toolbar class="chat-toolbar">
+        <div class="chat-bar ion-padding-horizontal">
+            <app-message-input (newMessage)="sendMessage($event)"></app-message-input>
+        </div>
+    </ion-toolbar>
+</ion-footer>

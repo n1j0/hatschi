@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "732797313613",
+    "firebase_url": "https://hatschi-5e899-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "hatschi-5e899",
+    "storage_bucket": "hatschi-5e899.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732797313613:android:cc2b3e18d919fe6d85b204",
+        "android_client_info": {
+          "package_name": "de.fhdw.hatschi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732797313613-76te5jf31cl9d10i4s3i5gef05duasau.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZJKbxSAxsOtS_NasqCqxJjOk3vtmrh48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732797313613-76te5jf31cl9d10i4s3i5gef05duasau.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "732797313613-m95644ekgg88fpnqst2s89rbatpd0n05.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "de.fhdw.hatschi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

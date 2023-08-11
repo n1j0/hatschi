@@ -1,0 +1,31 @@
+$border-radius: 0.75rem;
+
+.message {
+    display: flex;
+    justify-content: flex-start;
+
+    ion-item {
+        --border-radius: #{$border-radius} #{$border-radius} #{$border-radius} 0;
+        --padding-end: var(--padding-start);
+        --inner-padding-end: unset;
+
+        width: fit-content;
+        max-width: 80%;
+        margin-bottom: 0.25rem;
+
+        p {
+            width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+    }
+
+    &.right {
+        justify-content: flex-end;
+
+        ion-item {
+            --border-radius: #{$border-radius} #{$border-radius} 0 #{$border-radius};
+        }
+    }
+}

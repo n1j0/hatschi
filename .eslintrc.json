@@ -1,0 +1,144 @@
+{
+  "root": true,
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.js"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": [
+          "tsconfig.json",
+          "tsconfig.spec.json",
+          "e2e/tsconfig.json"
+        ],
+        "createDefaultProgram": true,
+        "sourceType": "module"
+      },
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "extends": [
+        "airbnb-base",
+        "plugin:@angular-eslint/recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "rules": {
+        "@angular-eslint/component-class-suffix": [
+          "error",
+          {
+            "suffixes": [
+              "Page",
+              "Component"
+            ]
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "array-bracket-spacing": [
+          "error",
+          "always"
+        ],
+        "arrow-parens": [
+          "error",
+          "as-needed",
+          {
+            "requireForBlockBody": true
+          }
+        ],
+        "indent": [
+          "error",
+          4
+        ],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": [
+          "error"
+        ],
+        "linebreak-style": [
+          "error",
+          "unix"
+        ],
+        "max-len": [
+          "error",
+          {
+            "code": 120,
+            "ignoreComments": true,
+            "ignoreTrailingComments": true,
+            "ignoreUrls": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true,
+            "ignorePattern": "^\\s*(<(path|circle|ellipse|line|polygon|polyline|rect)|d=\")"
+          }
+        ],
+        "object-curly-newline": [
+          "error",
+          {
+            "ObjectExpression": {
+              "consistent": true
+            },
+            "ObjectPattern": {
+              "consistent": true
+            },
+            "ImportDeclaration": {
+              "consistent": true
+            },
+            "ExportDeclaration": {
+              "multiline": true,
+              "minProperties": 3
+            }
+          }
+        ],
+        "semi": [
+          "error",
+          "never"
+        ],
+        "import/prefer-default-export": 0,
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "ts": "never"
+          }
+        ]
+      },
+      "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [
+              ".js",
+              ".ts",
+              ".d.ts"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}
